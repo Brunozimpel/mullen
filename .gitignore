@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# from this project
+samples/keep_local/
