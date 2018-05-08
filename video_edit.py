@@ -10,6 +10,7 @@ def split_to_frames(video, path, prefix):
 	success,image = vidcap.read()
 	count = 0
 	while success:
+		vidcap.set(cv2.CAP_PROP_POS_MSEC,(count*1000))
 		cv2.imwrite(path + prefix +"%d.jpg" % count, image)     # save frame as JPEG file
 		success,image = vidcap.read()
 		print(count, end='\r')
@@ -18,3 +19,4 @@ def split_to_frames(video, path, prefix):
 
 if __name__ == "__main__":
 	fire.Fire(split_to_frames)
+ 	
