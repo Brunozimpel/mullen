@@ -10,8 +10,8 @@ dev_install:
 # Clean da rouse
 clean:
 	rm -rf .cache/ dist/ .mypy_cache/ *.egg-info/ *.log \
-	   notebooks/.ipynb_checkpoints/ 
-	find ./amc -name '__pycache__' -type d | xargs -I@ rm -rf @
+		.ipynb_checkpoints/ 
+	find ./ -name '__pycache__' -type d | xargs -I@ rm -rf @
 
 # Remove virtual env
 clean_venv:
