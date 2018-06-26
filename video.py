@@ -14,7 +14,6 @@ def downsample(frame_array, num_samples):
     total_frames = frame_array.shape[0]
     step = total_frames/ num_samples
     if step <= 1:        
-        print('num_samples > total_frame')
         return frame_array
     else:
         return np.array(
