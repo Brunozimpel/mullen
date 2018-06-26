@@ -26,4 +26,3 @@ def plot_side_by_side(imgs, fsize=(15,10), axis=False):
 		plt.imshow(imgs[i])
 		if not axis:
 			plt.axis('off')
-
