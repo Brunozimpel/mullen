@@ -9,7 +9,7 @@ dev_install:
 
 # Clean da rouse
 clean:
-	rm -rf .cache/ dist/ .mypy_cache/ *.egg-info/ *.log \
+	rm -rf cache/ dist/ .mypy_cache/ *.egg-info/ *.log \
 		.ipynb_checkpoints/ 
 	find ./ -name '__pycache__' -type d | xargs -I@ rm -rf @
 
