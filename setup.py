@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 # Model package name
-NAME = 'Mullen'
+NAME = 'mullen'
 
 # Default package dir
 PKG_DIR = 'mullen'
@@ -16,16 +16,18 @@ DEPENDENCIES = [
    'numpy',
    'tensorflow',
    'keras',
-   'opencv'
+   'opencv-python',
+   'moviepy',
+   'h5py', 
 ]
 
 setup(
     name=NAME,
     version=VERSION['__version__'],
-    description='Mullen the skate trick classifier',
+    description='Mullen, the skate trick classifier',
     author='Matheus Frata',
     author_email='matheus.frata@gmail.com',
-    packages=find_packages(exclude=("tests",)),
+    packages=find_packages(),
     install_requires=DEPENDENCIES, #external packages as dependencies
 )
 
