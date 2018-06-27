@@ -1,6 +1,7 @@
 import cv2
 import os
 import numpy as np
+import moviepy.editor as mp
 import math
 
 def video_to_array(filepath):
@@ -19,6 +20,13 @@ def downsample(frame_array, num_samples):
         return np.array(
             [frame_array[i] for i in map(lambda x: int(round(x)), np.arange(0,total_frames, step))]
         )
+    
+def resize(video, size=(250,140), remove=True):
+    clip = mp.VideoFileClip(video,audio=False)
+    clip_resized = clip.resize(size)
+    clip_resized.write_videofile(video[:-4]+'.mp4')
+    if remove:
+        os.remove(video)
 
 
 if __name__ == "__main__":
