@@ -11,8 +11,8 @@ import os
 
 
 class Mullen():
-    def __init__(self, frame):
-        self.downsample_size=40
+    def __init__(self, frame, downsample=30):
+        self.downsample = downsample
         self.extractor = Extractor(input_shape=frame)
         self.data_pkl = 'cache/X_Y_classes.pkl'
 
@@ -113,7 +113,7 @@ class Mullen():
         return self.extractor.extract(
             vd.downsample(
                 vd.video_to_array(video), 
-                self.downsample_size
+                self.downsample
             )/255
         )
             

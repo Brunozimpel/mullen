@@ -25,7 +25,7 @@ def resize(video, size=(250,140), remove=True):
     clip = mp.VideoFileClip(video,audio=False)
     clip_resized = clip.resize(size)
     clip_resized.write_videofile(video[:-4]+'.mp4')
-    if remove:
+    if remove and (video[-4:] != '.mp4'):
         os.remove(video)
 
 
