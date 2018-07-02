@@ -16,7 +16,7 @@ class Extractor():
         )
 
         self.model.add(
-            Conv2D(16, (3, 3), activation='relu')
+            Conv2D(32, (3, 3), activation='relu')
         )
         
         self.model.add(
@@ -24,7 +24,7 @@ class Extractor():
         )
 
         self.model.add(
-            Conv2D(8, (3, 3), activation='relu')
+            Conv2D(16, (3, 3), activation='relu')
         )
         
         self.model.add(

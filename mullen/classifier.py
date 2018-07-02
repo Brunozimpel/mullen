@@ -3,6 +3,7 @@ from keras.layers import LSTM, Dense
 from keras.utils import to_categorical
 from keras.models import load_model
 from mullen.extractor import Extractor
+from sklearn.model_selection import train_test_split
 import mullen.video as vd
 import numpy as np
 import pickle
@@ -16,7 +17,7 @@ class Mullen():
         self.extractor = Extractor(input_shape=frame)
         self.data_pkl = 'cache/X_Y_classes.pkl'
 
-    def session(self, data_dir, **kwargs):
+    def session(self, data_dir, percent, **kwargs):
         if not os.path.exists('cache'):
             os.makedirs('cache')
             
@@ -39,8 +40,11 @@ class Mullen():
         print("Creating lstm with shape = %s and %i classes" 
               % (str(input_shape), self.num_classes))
         self.model = self._lstm(input_shape, self.num_classes)
+        
+        X_train, X_val, y_train, y_val = train_test_split(
+            X, Y, test_size=percent, random_state=42)
 
-        self.model.fit(X, Y, **kwargs)
+        self.model.fit(X, Y, validation_data=(X_val, y_val), **kwargs)
         
     def guess_trick(self, data):
         processed = self._pipeline(data)

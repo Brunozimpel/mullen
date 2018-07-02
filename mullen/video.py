@@ -21,7 +21,7 @@ def downsample(frame_array, num_samples):
             [frame_array[i] for i in map(lambda x: int(round(x)), np.arange(0,total_frames, step))]
         )
     
-def resize(video, size=(250,140), remove=True):
+def resize(video, size=(256,144), remove=True):
     clip = mp.VideoFileClip(video,audio=False)
     clip_resized = clip.resize(size)
     clip_resized.write_videofile(video[:-4]+'.mp4')
