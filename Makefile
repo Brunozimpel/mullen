@@ -1,7 +1,3 @@
-# Creates virtual enviroments
-dev_env:
-	virtualenv -p python3 .venv
-
 # Install dependecies
 dev_install:
 	[ ! -z "${VIRTUAL_ENV}" ] # Check for virtualenv.
@@ -12,10 +8,6 @@ clean:
 	rm -rf cache/ dist/ .mypy_cache/ *.egg-info/ *.log \
 		.ipynb_checkpoints/ 
 	find ./ -name '__pycache__' -type d | xargs -I@ rm -rf @
-
-# Remove virtual env
-clean_venv:
-	rm -rf .venv/
 
 # Opens Jupyter Server
 analyse:

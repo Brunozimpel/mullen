@@ -5,14 +5,6 @@ Mullen is a skate trick classifierfrom videos!! The name of the project is a tri
 ## Usage
 
 Create the enviroment
-```
-make dev_env
-```
-
-Activate the enviroment
-```
-source .venv/bin/activate
-```
 
 Install dependecies
 ```
@@ -29,11 +21,6 @@ make analyse
 Remove Trash files
 ```
 make clean
-```
-
-Remove enviroment files
-```
-make clean_venv
 ```
 
 Kill Jupyter Server
