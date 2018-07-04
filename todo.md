@@ -1,13 +1,12 @@
 # Mullen
 
-* [ ] split the video in frames
-* [ ] how to link the files to the cnn
-* [ ] linking the cnn with the rnn
+* [x] split the video in frames
+* [x] how to link the files to the cnn
+* [x] linking the cnn with the rnn
 
 
 ## Data
-* [ ] 32 kickflip samples
-* [ ] 32 ollie samples
-* [ ] 32 notrick samples
-* [ ] 32 ollie/flip/notrick for manual testing
+* [x] 100 kickflip samples
+* [x] 100 ollie samples
+* [x] 100 notrick samples
 
